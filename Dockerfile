@@ -6,7 +6,7 @@ RUN /usr/local/sbin/builder-enter
 
 # Install packages
 RUN apt-get -q update && \
-    apt-get -q upgrade && \
+    apt-get -y -q upgrade && \
     apt-get install -y -q \
         apache2 \
         libapache2-mod-php5 \
