@@ -22,7 +22,7 @@ RUN apt-get -q update && \
     && apt-get clean
 
 # Install Pydio
-RUN wget -qO /tmp/pydio.deb http://dl.ajaxplorer.info/repos/apt/pool/main/p/pydio/pydio_5.3.3_all.deb && \
+RUN wget -qO /tmp/pydio.deb http://dl.ajaxplorer.info/repos/apt/pool/main/p/pydio/pydio_6.0.2_all.deb && \
     dpkg -i /tmp/pydio.deb && \
     rm -f /tmp/pydio.deb
 
