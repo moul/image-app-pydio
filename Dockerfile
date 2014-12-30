@@ -18,6 +18,7 @@ RUN apt-get -q update && \
         php5-cli \
         php5-curl \
         php5-gd \
+        php5-intl \
         php5-mcrypt \
         php5-mysqlnd \
         pwgen \
