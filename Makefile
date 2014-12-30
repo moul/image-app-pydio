@@ -1,9 +1,9 @@
 DOCKER_NAMESPACE =	armbuild/
 NAME =			ocs-app-pydio
-VERSION =		utopic
-VERSION_ALIASES =	14.10 latest
-TITLE =			Pydio 5.3
-DESCRIPTION =		Pydio 5.3 with MySQL
+VERSION =		latest
+VERSION_ALIASES =	14.10 utopic 6.0.2 6.0 6
+TITLE =			Pydio 6.0.2
+DESCRIPTION =		Pydio 6.0.2 with MySQL
 DOC_URL =		https://doc.cloud.online.net/applications/pydio.html
 SOURCE_URL =		https://github.com/online-labs/image-app-pydio
 
