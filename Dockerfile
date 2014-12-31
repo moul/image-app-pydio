@@ -12,7 +12,6 @@ RUN apt-get -q update && \
     apt-get install -y -q \
         apache2 \
         libapache2-mod-php5 \
-        mysql-server \
         php5 \
         php5-cgi \
         php5-cli \
