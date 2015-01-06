@@ -43,5 +43,10 @@ RUN cd /usr/share/pydio && curl -sS https://getcomposer.org/installer | php && \
     cd /usr/share/pydio && php composer.phar install && \
     wget -qO /usr/share/pydio/aws.phar https://github.com/aws/aws-sdk-php/releases/download/2.7.2/aws.phar
 
+
+# Update permissions
+RUN chown -R www-data:www-data /usr/share/pydio/
+
+
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
