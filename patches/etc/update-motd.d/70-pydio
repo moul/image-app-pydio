@@ -5,11 +5,16 @@ cat <<EOF
 Pydio $(cut -d_ -f1 /usr/share/pydio/conf/VERSION) is installed in /usr/share/pydio.
 EOF
 
-# FIXME: check if pydio is installed
-cat <<EOF
+if [ -f /root/.my.cnf ]; then
+    cat <<EOF
 MySQL is configured for user root with password $(cat /root/.my.cnf | grep password | awk '{print $3}').
 To continue the installation, open http://$(/usr/local/bin/oc-metadata PUBLIC_IP_ADDRESS)/pydio/index.php?ignore_tests=true in your browser.
 EOF
+else
+    cat <<EOF
+MySQL is installing in background, come back in a few seconds.
+EOF
+fi
 
 cat <<EOF
 You can hide this message on the next connection by deleting the $0 file.
