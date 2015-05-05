@@ -1,15 +1,16 @@
-## -*- docker-image-name: "armbuild/ocs-app-pydio:utopic" -*-
-FROM armbuild/ocs-distrib-ubuntu:utopic
-MAINTAINER Online Labs <opensource@ocs.online.net> (@online_en)
+## -*- docker-image-name: "armbuild/scw-app-pydio:utopic" -*-
+FROM armbuild/scw-distrib-ubuntu:utopic
+MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
 
 # Prepare rootfs for image-builder
 RUN /usr/local/sbin/builder-enter
 
+
 # Install packages
-RUN apt-get -q update && \
-    apt-get -y -q upgrade && \
-    apt-get install -y -q \
+RUN apt-get -q update \
+ && apt-get -y -q upgrade \
+ && apt-get install -y -q \
         apache2 \
         libapache2-mod-php5 \
         php5 \
@@ -21,22 +22,26 @@ RUN apt-get -q update && \
         php5-mcrypt \
         php5-mysqlnd \
         pwgen \
-    && apt-get clean
+ && apt-get clean
+
 
 # Install Pydio
 RUN wget -qO /tmp/pydio.deb http://dl.ajaxplorer.info/repos/apt/pool/main/p/pydio/pydio_6.0.2_all.deb && \
     dpkg -i /tmp/pydio.deb && \
     rm -f /tmp/pydio.deb
 
+
 # Configues Apache/PHP
 RUN a2enmod rewrite && \
     ln -sf /usr/share/doc/pydio/apache2.sample.conf /etc/apache2/sites-enabled/pydio.conf && \
     ln -sf /etc/php5/mods-available/mcrypt.ini /etc/php5/apache2/conf.d/
 
+
 # Patch rootfs
 ADD ./patches/etc/ /etc/
 ADD ./patches/usr/local/ /usr/local/
 ADD ./patches/usr/share/ /usr/share/
+
 
 # Install Pydio dependencies
 RUN cd /usr/share/pydio && curl -sS https://getcomposer.org/installer | php && \
