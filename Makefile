@@ -1,9 +1,9 @@
 DOCKER_NAMESPACE =	armbuild/
 NAME =			scw-app-pydio
 VERSION =		latest
-VERSION_ALIASES =	14.10 utopic 6.0.2 6.0 6
-TITLE =			Pydio 6.0.2
-DESCRIPTION =		Pydio 6.0.2 with MySQL
+VERSION_ALIASES =	6.0.7 6.0 6
+TITLE =			Pydio
+DESCRIPTION =		Pydio
 DOC_URL =		https://www.scaleway.com/docs/deploy-pydio-with-object-storage
 SOURCE_URL =		https://github.com/scaleway/image-app-pydio
 

@@ -24,9 +24,10 @@ RUN apt-get -q update \
         pwgen \
  && apt-get clean
 
+ENV PYDIO_VERSION 6.0.7
 
 # Install Pydio
-RUN wget -qO /tmp/pydio.deb http://dl.ajaxplorer.info/repos/apt/pool/main/p/pydio/pydio_6.0.2_all.deb && \
+RUN wget -qO /tmp/pydio.deb http://dl.ajaxplorer.info/repos/apt/pool/main/p/pydio/pydio_${PYDIO_VERSION}_all.deb && \
     dpkg -i /tmp/pydio.deb && \
     rm -f /tmp/pydio.deb
 
