@@ -1,5 +1,5 @@
-## -*- docker-image-name: "armbuild/scw-app-pydio:utopic" -*-
-FROM armbuild/scw-distrib-ubuntu:utopic
+## -*- docker-image-name: "armbuild/scw-app-pydio:trusty" -*-
+FROM armbuild/scw-distrib-ubuntu:trusty
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
 
