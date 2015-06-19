@@ -44,10 +44,12 @@ ADD ./patches/usr/local/ /usr/local/
 ADD ./patches/usr/share/ /usr/share/
 
 
+ENV AWSSDK_VERSION 2.8.10
+
 # Install Pydio dependencies
 RUN cd /usr/share/pydio && curl -sS https://getcomposer.org/installer | php && \
     cd /usr/share/pydio && php composer.phar install && \
-    wget -qO /usr/share/pydio/aws.phar https://github.com/aws/aws-sdk-php/releases/download/2.7.2/aws.phar
+    wget -qO /usr/share/pydio/aws.phar https://github.com/aws/aws-sdk-php/releases/download/$AWSSDK_VERSION/aws.phar
 
 
 # Update permissions
